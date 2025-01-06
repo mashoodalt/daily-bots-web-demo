@@ -1,27 +1,43 @@
-import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { login, signup } from './actions'
+import React from 'react';
 
-export default function LoginPage() {
+import {Input} from '@/components/ui/input';
+
+const HomePage = () => {
   return (
-    <main className="w-full flex items-center justify-center bg-primary-200 p-4 bg-[length:auto_50%] lg:bg-auto bg-colorWash bg-no-repeat bg-right-top">
-    <div className="flex flex-col gap-8 lg:gap-12 items-center max-w-full lg:max-w-3xl">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-balance text-left">
-        Daily Bots function calling demo
-      </h1>
-      <div className="h-[1px] bg-primary-300 w-full" />
-
-
-      <form>
-        <Label >Email:</Label>
-        <Input id="email" name="email" type="email" required />
-        <Label htmlFor="password">Password:</Label>
-        <Input id="password" name="password" type="password" required />
-        <Button formAction={login}>Log in</Button>
-        <Button formAction={signup}>Sign up</Button>
-      </form>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-white w-full">
+      <div className="absolute inset-20 bg-grid-pattern opacity-10 pointer-events-none"></div>
+      <div className="text-center">
+        <div className="mb-8">
+          <svg
+            className="w-10 h-10 mx-auto"
+            fill="black"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M12 2l10 20H2L12 2z" />
+          </svg>
+        </div>
+        <h1 className="text-5xl mb-4">
+          Scale your team with digital workers.
+        </h1>
+        <p className="mb-8">Enter your email to sign up or login.</p>
+        <div className="flex flex-col items-center">
+          {/* <input
+            type="email"
+            placeholder="enter your email"
+            className="border border-gray-300 p-2 mb-4 w-64 text-center rounded bg-[#ffffff] focus:outline-none focus:border-primary"
+          /> */}
+          <Input
+            placeholder="enter your email"
+            className="w-64 mb-4 focus:outline-none"
+          />
+          <button className="bg-[#CDFE00] text-black py-2 px-4 rounded">
+            Get Started
+          </button>
+        </div>
+      </div>
     </div>
-    </main>
-  )
-}
+  );
+};
+
+export default HomePage;

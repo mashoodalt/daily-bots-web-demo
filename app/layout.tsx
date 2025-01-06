@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono } from "next/font/google";
+import { Inter, Space_Mono, Source_Serif_4 } from "next/font/google";
 
 import "./global.css";
 
@@ -16,10 +16,17 @@ const fontMono = Space_Mono({
   variable: "--font-mono",
 });
 
+const fontSerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "500"], // Regular and SemiBold
+  variable: "--font-serif",
+});
+
+
 export const metadata: Metadata = {
-  title: "Daily Bots Demo",
-  description: "Daily Bots voice-to-voice example app",
-  metadataBase: new URL("https://demo.dailybots.ai"),
+  title: "Alt Voice",
+  description: "Alt Voice AI Demos",
+  metadataBase: new URL("https://www.altventures.co/"),
 };
 
 export default function RootLayout({
@@ -29,9 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontSans.variable} ${fontMono.variable}`}>
-        {children}
-      </body>
-    </html>
+      {/* ${fontSans.variable} ${fontMono.variable}  */}
+     <body className={`${fontSerif.variable} bg-white`}>
+       {children}
+     </body>
+   </html>
   );
 }

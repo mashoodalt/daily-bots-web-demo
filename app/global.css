@@ -17,6 +17,14 @@
   }
 }
 
+/* Add this to your global CSS file */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgb(160, 160, 160) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgb(160, 160, 160) 1px, transparent 1px);
+  background-size: 100px 100px; /* Adjust the size for your grid */
+  
+}
+
 * {
   box-sizing: border-box;
 }
@@ -39,7 +47,7 @@ body {
 }
 
 body {
-  font-family: theme(fontFamily.sans);
+  font-family: theme(fontFamily.serif);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
